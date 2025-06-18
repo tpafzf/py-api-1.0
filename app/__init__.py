@@ -17,13 +17,13 @@ def create_app(config_name='default'):
     app.config.from_object(config[config_name])
 
     # Initialize extensions with app
-    db.init_app(app)
+    # db.init_app(app)
     api.init_app(app)
-    scheduler.init_app(app)
+    # scheduler.init_app(app)
 
     # Register blueprints
-    from app.routes import api_bp
-    app.register_blueprint(api_bp)
+    from app.players.players_bp import players_bp
+    app.register_blueprint(players_bp)
 
     # Initialize scheduler jobs
     """ with app.app_context():
