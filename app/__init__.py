@@ -24,6 +24,9 @@ def create_app(config_name='default'):
     # Register blueprints
     from app.players.players_bp import players_bp
     app.register_blueprint(players_bp)
+    
+    # Import routes after blueprint registration to avoid circular imports
+    from app.players import routes
 
     # Initialize scheduler jobs
     """ with app.app_context():
