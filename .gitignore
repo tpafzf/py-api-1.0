@@ -28,6 +28,13 @@ ENV/
 .venv
 .python-version
 
+# Conda
+*.conda
+.conda/
+conda-meta/
+envs/
+pkgs/
+
 # Flask
 instance/
 .webassets-cache
